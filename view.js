@@ -5,18 +5,19 @@ function localizedDateFromInput(inp) {
 
   new Date('2016-02-22')  in New York we get
   Sun Feb 21 2016 19:00:00 GMT-0500 (EST)
-  This will change in ES6 to use local time zone.
+  which is probably not what we want.
 
-  new Date('4/3/15') gives a local zone date
+  (This will change in ES6 to use local time zone.)
+
+  new Date('4/3/15') does gives a date in local zone
   Fri Apr 03 2015 00:00:00 GMT-0400 (EDT)
 
   BUT in Europe 4/3/15 means 4th March not April 3rd.
-  So using local format is dangerous
 
-  BUT if we run
+  IF we run the other form of constructor - new Date(y, m, d)
   new Date(2016, 2, 22) we get 
   Tue Mar 22 2016 00:00:00 GMT-0400 (EDT)
-  as months are zero-based 
+  Months are zero-based 
   (hangover from java) though this format does give us
   at least a localized date
 
